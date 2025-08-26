@@ -3,8 +3,8 @@
  * 
  * DECISIONES DE DISEÑO:
  * 
- * 1. AVL Tree: Garantiza O(log n) en todas las operaciones
- * 2. Auto-balanceado: Evita degradación a O(n) del BST básico
+ * 1. Árbol AVL: Garantiza O(log n) en todas las operaciones
+ * 2. Auto-balanceado: Evita complejidad O(n) del BST básico
  * 3. Implementación desde cero: Cumple la restricción de no usar estructuras predefinidas
  * 
  */
@@ -13,9 +13,9 @@ public class InventorySystem {
     /**
      * Nodo interno del árbol AVL
      * 
-     * DECISIÓN: Clase interna para encapsulación
-     * - Solo el InventorySystem puede crear/modificar nodos
-     * - Evita exposición innecesaria de la estructura interna
+     * Clase interna para encapsulación
+     * 
+     * Solo el InventorySystem puede crear/modificar nodos
      */
     private class AVLNode {
         int code;           // Código del producto
@@ -36,7 +36,7 @@ public class InventorySystem {
     
     /**
      * Constructor
-     * DECISIÓN: Inicialización simple y clara
+     * Inicialización simple y clara
      */
     public InventorySystem() {
         this.root = null;
@@ -47,7 +47,7 @@ public class InventorySystem {
     
     /**
      * Obtiene la altura de un nodo
-     * DECISIÓN: Método auxiliar para manejar nulos de forma segura
+     * Método auxiliar para manejar nulos de forma segura
      */
     private int getHeight(AVLNode node) {
         return (node == null) ? 0 : node.height;
@@ -55,7 +55,7 @@ public class InventorySystem {
     
     /**
      * Calcula el factor de balance de un nodo
-     * DECISIÓN: Factor de balance = altura(izquierdo) - altura(derecho)
+     * Factor de balance = altura(izquierdo) - altura(derecho)
      * - Positivo: árbol inclinado hacia la izquierda
      * - Negativo: árbol inclinado hacia la derecha
      * - AVL requiere que esté en el intervalo [-1, 1]
@@ -103,7 +103,7 @@ public class InventorySystem {
     
     /**
      * Rotación simple a la izquierda
-     * DECISIÓN: Corrige desbalance derecho-derecho
+     * DECISIÓN: Corrige desequilibrio derecho-derecho
      */
     private AVLNode rotateLeft(AVLNode x) {
         AVLNode y = x.right;
@@ -125,10 +125,6 @@ public class InventorySystem {
     /**
      * Inserta un código en el sistema
      * DECISIÓN: Método público basado en el método recursivo privado "insertAVL"
-     * 
-     * - Separación de responsabilidades
-     * - Control de acceso a la estructura interna
-     * 
      */
     public void insert(int code) {
         root = insertAVL(root, code);
@@ -235,7 +231,7 @@ public class InventorySystem {
     public void showAscending() {
         System.out.println("=== ORDEN ASCENDENTE ===");
         inOrderTraversal(root);
-        System.out.println();
+        System.out.println("\n");
     }
     
     private void inOrderTraversal(AVLNode node) {
@@ -276,13 +272,13 @@ public class InventorySystem {
                 queue[rear++] = current.right;
             }
         }
-        System.out.println();
+        System.out.println("\n");
     }
     
     public void showDescending() {
         System.out.println("=== ORDEN DESCENDENTE ===");
         reverseInOrder(root);
-        System.out.println();
+        System.out.println("\n");
     }
 
     private void reverseInOrder(AVLNode node) {
@@ -301,7 +297,7 @@ public class InventorySystem {
     public void showHierarchical() {
         System.out.println("=== RECORRIDO JERÁRQUICO (Padre->Hijos) ===");
         preOrderTraversal(root);
-        System.out.println();
+        System.out.println("\n");
     }
     
     private void preOrderTraversal(AVLNode node) {
@@ -337,7 +333,7 @@ public class InventorySystem {
         System.out.println("Total de códigos: " + size);
         System.out.println("Altura del árbol: " + getHeight(root));
         System.out.println("Árbol balanceado: " + isBalanced(root));
-        System.out.println();
+        System.out.println("\n");
     }
     
     /**
@@ -354,7 +350,7 @@ public class InventorySystem {
     
     /**
      * Método main para demostración
-     * DECISIÓN: Incluir ejemplos de uso para facilitar testing
+     * Incluir ejemplos de uso para facilitar testing
      */
     public static void main(String[] args) {
         InventorySystem inventory = new InventorySystem();
