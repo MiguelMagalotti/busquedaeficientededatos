@@ -33,27 +33,37 @@ for (int code : testData) {
 Salida esperada (fragmentos):
 
 ```
-=== ESTADÍSTICAS DEL SISTEMA ===
-Total de códigos: 11
-Altura del árbol: 4
-Árbol balanceado: true
+=== DEMO DEL SISTEMA DE INVENTARIO ===
+
+Insertando c?digos: 
+50 30 70 20 40 60 80 10 25 35 45 
+
+=== ESTAD?STICAS DEL SISTEMA ===
+Total de c?digos: 11
+Altura del ?rbol: 4
+?rbol balanceado: true
+
 
 === ORDEN ASCENDENTE ===
-10 20 25 30 35 40 45 50 60 70 80
+10 20 25 30 35 40 45 50 60 70 80 
 
 === ORDEN DESCENDENTE ===
-80 70 60 50 45 40 35 30 25 20 10
+80 70 60 50 45 40 35 30 25 20 10 
 
-=== RECORRIDO JERÁRQUICO (Padre->Hijos) ===
-50 30 20 10 25 40 35 45 70 60 80
+=== RECORRIDO JER?RQUICO (Padre->Hijos) ===
+50 30 20 10 25 40 35 45 70 60 80 
 
 === RECORRIDO POR NIVELES ===
-50 30 70 20 40 60 80 10 25 35 45
+50 30 70 20 40 60 80 10 25 35 45 
 
-=== PRUEBAS DE BÚSQUEDA ===
-Código 50: ENCONTRADO
-Código 25: ENCONTRADO
-Código 100: NO ENCONTRADO
+=== PRUEBAS DE B?SQUEDA ===
+C?digo 50: ENCONTRADO
+C?digo 25: ENCONTRADO
+C?digo 100: NO ENCONTRADO
+C?digo 80: ENCONTRADO
+C?digo 15: NO ENCONTRADO
+
+=== Code Execution Successful ===
 ```
 
 ---
